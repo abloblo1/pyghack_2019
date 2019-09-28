@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
 //        primarySwatch: AppColorsTheme.myTheme.primarySwatch,
       ),
-      home: SplashScreen(),
-      routes: <String, WidgetBuilder>{
-        '/Login': (BuildContext context) => Login()
-      }
+      home: News(),
+//      home: SplashScreen(),
+//      routes: <String, WidgetBuilder>{
+//        '/Login': (BuildContext context) => Login()
+//      }
     );
   }
 }
