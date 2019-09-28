@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
 //        primarySwatch: AppColorsTheme.myTheme.primarySwatch,
       ),
-      home: Join(),
+      home: News(),
+//      home: SplashScreen(),
 //      routes: <String, WidgetBuilder>{
 //        '/Login': (BuildContext context) => Login()
 //      }

@@ -49,8 +49,14 @@ flutter:
     - assets/welcomeSign.png
     - assets/bar_graph.png
     - assets/line_graph.png
+<<<<<<< HEAD
     - assets/join_join.png
     - assets/join_joined.png
+=======
+    - assets/signUpSign.png
+    - assets/homeUserSign.png
+    - assets/home.png
+>>>>>>> 0d09e7412fdcc46d13cd0173b043cc053702bc57
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -63,15 +69,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+  fonts:
+    - family: Cochin
+      fonts:
+        - asset: assets/Cochin.ttf
+    - family: Blue Highway
+      fonts:
+       - asset: assets/blueHighway.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
