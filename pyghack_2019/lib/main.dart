@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pyghack_2019/join.dart';
 import 'package:pyghack_2019/login.dart';
 import 'package:pyghack_2019/splashScreen.dart';
 import 'forum.dart';
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
 //        primarySwatch: AppColorsTheme.myTheme.primarySwatch,
       ),
-      home: SplashScreen(),
-      routes: <String, WidgetBuilder>{
-        '/Login': (BuildContext context) => Login()
-      }
+      home: Join(),
+//      routes: <String, WidgetBuilder>{
+//        '/Login': (BuildContext context) => Login()
+//      }
     );
   }
 }
