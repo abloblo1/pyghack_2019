@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/':      (context) => new ForumBase(),
+        '/':      (context) => new News(),
         '/news': (context) => News(),
       },
     );

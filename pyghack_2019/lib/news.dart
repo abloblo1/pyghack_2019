@@ -131,9 +131,6 @@ class News extends StatefulWidget {
 
 class _News extends State<News> {
   Future<Post> post;
-//  List<Color> themeColors = new List();
-//  List<Widget> widgets = new List();
-//  List<String> titles = new List();
 
   @override
   void initState() {
@@ -154,17 +151,18 @@ class _News extends State<News> {
       Widget toReturn = new Container(
         margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
         child:
-//        new Text (
-//            titles[index],
-//            style: new TextStyle(
-//              color: Colors.black,
-//            )
-//        ),
-          new RaisedButton(
-            child: Text(titles[index]),
-            onPressed() {
-            },
-          ),
+        new Text (
+            titles[index],
+            style: new TextStyle(
+              color: Colors.black,
+            )
+        ),
+//          new RaisedButton (
+//            child: Text(titles[index]),
+//            onPressed() {
+//              _save();
+//            },
+//          ),
         decoration: new BoxDecoration (
             borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
             color: themeColors[index]
@@ -201,14 +199,14 @@ class _News extends State<News> {
                       createNewsBanner(2),
                       createNewsBanner(3),
                       createNewsBanner(4),
-                      new RaisedButton(
-                        onPressed: () {
-                        // Navigate back to the first screen by popping the current route
-                        // off the stack.
-                        Navigator.pop(context);
-                      },
-                    child: Text('Go back!'),
-              ),
+//                      new RaisedButton(
+//                        onPressed: () {
+//                        // Navigate back to the first screen by popping the current route
+//                        // off the stack.
+//                        Navigator.pop(context);
+//                      },
+//                    child: Text('Go back!'),
+//              ),
                     ]
                 );
                 return toReturn;
