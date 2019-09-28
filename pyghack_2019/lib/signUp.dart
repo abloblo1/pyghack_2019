@@ -1,16 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pyghack_2019/signUp.dart';
 import 'package:pyghack_2019/homePage.dart';
 
-class Login extends StatefulWidget {
+
+class SignUp extends StatefulWidget {
   @override
-  loginPage createState() => new loginPage();
+  signUpPage createState() => new signUpPage();
 }
 
-class loginPage extends State<Login> {
+class signUpPage extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         body: Stack(children: <Widget>[
@@ -21,20 +22,19 @@ class loginPage extends State<Login> {
           height: size.height,
           fit: BoxFit.fill,
         ),
-
       ),
       Column(
         children: <Widget>[
           Container(
             child: Image.asset(
-              'assets/homeUserSign.png',
+              'assets/signUpSign.png',
               width: size.width,
               height: size.height / 5,
             ),
           ),
           Text("       "),
           Text(
-            "Please sign in to start using the app.If you have not yet made an account,please sign up!",
+            "Fill out the fields below and then hit sign-up to begin using our app!",
             textAlign: TextAlign.center,
             style: TextStyle(fontFamily: 'Cochin'),
           ),
@@ -51,7 +51,7 @@ class loginPage extends State<Login> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Text("Login",
+                  Text("Sign-up",
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 25.0,
@@ -103,43 +103,30 @@ class loginPage extends State<Login> {
                       ),
                     ],
                   ),
-                  Container(child: Column(
-                    children: <Widget>[
-                      RaisedButton(
-                          onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Home()),
-                          );},
-                          color: const Color(0xFFCE0009),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0)),
-                          child: Text("LOGIN",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: "Blue Highway"))),
-                      Container(height: 20.0,),
-                      Divider(color:Colors.black,thickness: 1.0,),
-                      Text(
-                        "New User?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: "Cochin"),
-                      ),
-
-                      RaisedButton(
-                          onPressed:() {  Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignUp()),
-                          );},
-                          color: Colors.transparent,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(side: BorderSide(color: const Color(0xFFCE0009)),
-                              borderRadius: new BorderRadius.circular(30.0)),
-                          child: Text("SIGN UP",
-                              style: TextStyle(
-                                  color: const Color(0xFFCE0009),
-                                  fontFamily: "Blue Highway"))),
-                    ],
-                  ),),
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          height: 60.0,
+                        ),
+                        RaisedButton(
+                            onPressed: () { Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Home()),
+                            );},
+                            color: Colors.transparent,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                                side:
+                                    BorderSide(color: const Color(0xFFCE0009)),
+                                borderRadius: new BorderRadius.circular(30.0)),
+                            child: Text("SIGN UP",
+                                style: TextStyle(
+                                    color: const Color(0xFFCE0009),
+                                    fontFamily: "Blue Highway"))),
+                      ],
+                    ),
+                  ),
                 ],
               )),
         ],
