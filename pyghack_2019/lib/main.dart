@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pyghack_2019/join.dart';
 import 'package:pyghack_2019/login.dart';
 import 'package:pyghack_2019/splashScreen.dart';
 import 'forum.dart';

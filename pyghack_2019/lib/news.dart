@@ -264,6 +264,12 @@ class _News extends State<News> {
               color: Colors.black,
             )
         ),
+//          new RaisedButton(
+//            child: Text(titles[index]),
+//            onPressed() {
+//            },
+//          ),
+
         decoration: new BoxDecoration (
             borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
             color: themeColors[index]
