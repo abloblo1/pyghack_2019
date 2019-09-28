@@ -19,6 +19,7 @@ class loginPage extends State<Login> {
           height: size.height,
           fit: BoxFit.fill,
         ),
+
       ),
       Column(
         children: <Widget>[

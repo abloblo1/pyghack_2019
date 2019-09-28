@@ -154,17 +154,17 @@ class _News extends State<News> {
       Widget toReturn = new Container(
         margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
         child:
-//        new Text (
-//            titles[index],
-//            style: new TextStyle(
-//              color: Colors.black,
-//            )
-//        ),
-          new RaisedButton(
-            child: Text(titles[index]),
-            onPressed() {
-            },
-          ),
+        new Text (
+            titles[index],
+            style: new TextStyle(
+              color: Colors.black,
+            )
+        ),
+//          new RaisedButton(
+//            child: Text(titles[index]),
+//            onPressed() {
+//            },
+//          ),
         decoration: new BoxDecoration (
             borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
             color: themeColors[index]

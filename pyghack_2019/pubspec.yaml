@@ -47,6 +47,8 @@ flutter:
     - assets/loginBg.png
     - assets/splashScreen.png
     - assets/welcomeSign.png
+    - assets/bar_graph.png
+    - assets/line_graph.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
