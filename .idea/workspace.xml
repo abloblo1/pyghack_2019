@@ -9,19 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e988e178-849c-4d39-9916-b19d48759848" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/assets/Cochin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/assets/blueHighway.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/assets/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/assets/homeUserSign.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/assets/signUpSign.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/lib/homePage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyghack_2019/lib/signUp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyghack_2019/lib/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/pyghack_2019/lib/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyghack_2019/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pyghack_2019/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="e988e178-849c-4d39-9916-b19d48759848" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
