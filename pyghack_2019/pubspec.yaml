@@ -49,14 +49,11 @@ flutter:
     - assets/welcomeSign.png
     - assets/bar_graph.png
     - assets/line_graph.png
-<<<<<<< HEAD
     - assets/join_join.png
     - assets/join_joined.png
-=======
     - assets/signUpSign.png
     - assets/homeUserSign.png
     - assets/home.png
->>>>>>> 0d09e7412fdcc46d13cd0173b043cc053702bc57
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
