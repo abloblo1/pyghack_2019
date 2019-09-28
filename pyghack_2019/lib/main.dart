@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pyghack_2019/login.dart';
+import 'package:pyghack_2019/splashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +22,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
+      routes: <String, WidgetBuilder>{
+        '/Login': (BuildContext context) => Login()
+      }
     );
   }
 }
