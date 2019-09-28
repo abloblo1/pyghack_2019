@@ -49,6 +49,8 @@ flutter:
     - assets/welcomeSign.png
     - assets/bar_graph.png
     - assets/line_graph.png
+    - assets/join_join.png
+    - assets/join_joined.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
