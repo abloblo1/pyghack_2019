@@ -1,10 +1,15 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 
+List<Color> themeColors = new List();
+List<String> titles = new List();
+int entryCounter = 0;
+
 Future<Post> fetchPost() async {
-  String url = "https://newsapi.org/v2/top-headlines?" + 'country=us&' +
+  String url = "https://newsapi.org/v2/top-headlines?" + 'sources=bbc-news&' +
       'apiKey=2c67b49b8e2044a18751f3b8be4d5315';
 
   final response =
@@ -126,9 +131,9 @@ class News extends StatefulWidget {
 
 class _News extends State<News> {
   Future<Post> post;
-  List<Color> themeColors = new List();
-  List<Widget> widgets = new List();
-  List<String> titles = new List();
+//  List<Color> themeColors = new List();
+//  List<Widget> widgets = new List();
+//  List<String> titles = new List();
 
   @override
   void initState() {
@@ -143,7 +148,33 @@ class _News extends State<News> {
     themeColors.add(const Color(0xFFD66E71));
     themeColors.add(const Color(0xFFF28F94));
     themeColors.add(const Color(0xFFE3AFB1));
-    //Color base = const Color(0xFFCE0009);
+
+    Widget createNewsBanner(int index) {
+      Map map = new Map<String, int>();
+      Widget toReturn = new Container(
+        margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
+        child:
+//        new Text (
+//            titles[index],
+//            style: new TextStyle(
+//              color: Colors.black,
+//            )
+//        ),
+          new RaisedButton(
+            child: Text(titles[index]),
+            onPressed() {
+            },
+          ),
+        decoration: new BoxDecoration (
+            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+            color: themeColors[index]
+        ),
+        padding: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+      );
+
+      return toReturn;
+    }
+
     return MaterialApp(
       title: 'Trending Topics to Consider',
       theme: ThemeData(
@@ -161,82 +192,23 @@ class _News extends State<News> {
                 List<Articles> top5 = snapshot.data.articles;
                 for (int i = 0; i < top5.length; i++) {
                   String currTitle = top5[i].title;
-                  // trying to get rid of the " - New York Times" at end of title, but not working rn
-                  List<String> split = currTitle.split(' - ');
-                  titles.add(split[0]);
+                  titles.add(currTitle);
                 }
                 var toReturn = new Column(
                     children: <Widget>[
-                      new Container(
-                        margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
-                        child: new Text (
-                            titles[0],
-                            style: new TextStyle(
-                                color: Colors.black,
-                            )
-                        ),
-                        decoration: new BoxDecoration (
-                            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-                            color: themeColors[0]
-                        ),
-                        padding: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                      ),
-                      new Container(
-                        margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
-                        child: new Text (
-                            titles[1],
-                            style: new TextStyle(
-                              color: Colors.black,
-                            )
-                        ),
-                        decoration: new BoxDecoration (
-                            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-                            color: themeColors[1]
-                        ),
-                        padding: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                      ),
-                      new Container(
-                        margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
-                        child: new Text (
-                            titles[2],
-                            style: new TextStyle(
-                              color: Colors.black,
-                            )
-                        ),
-                        decoration: new BoxDecoration (
-                            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-                            color: themeColors[2]
-                        ),
-                        padding: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                      ),
-                      new Container(
-                        margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
-                        child: new Text (
-                            titles[3],
-                            style: new TextStyle(
-                              color: Colors.black,
-                            )
-                        ),
-                        decoration: new BoxDecoration (
-                            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-                            color: themeColors[3]
-                        ),
-                        padding: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                      ),
-                      new Container(
-                        margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10.0),
-                        child: new Text (
-                            titles[4],
-                            style: new TextStyle(
-                              color: Colors.black,
-                            )
-                        ),
-                        decoration: new BoxDecoration (
-                            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-                            color: themeColors[4]
-                        ),
-                        padding: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                      ),
+                      createNewsBanner(0),
+                      createNewsBanner(1),
+                      createNewsBanner(2),
+                      createNewsBanner(3),
+                      createNewsBanner(4),
+                      new RaisedButton(
+                        onPressed: () {
+                        // Navigate back to the first screen by popping the current route
+                        // off the stack.
+                        Navigator.pop(context);
+                      },
+                    child: Text('Go back!'),
+              ),
                     ]
                 );
                 return toReturn;
@@ -248,7 +220,7 @@ class _News extends State<News> {
               return CircularProgressIndicator();
             },
           ),
-        )
+        ),
       ),
     );
   }

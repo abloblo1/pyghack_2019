@@ -2,44 +2,55 @@ import 'package:flutter/material.dart';
 import 'search.dart';
 
 class ForumBase extends StatefulWidget {
-  ForumBase({Key key, this.title}) : super(key: key);
-  final String title;
+//  ForumBase({Key key, this.title}) : super(key: key);
+//  final String title;
+
 
   @override
   State<StatefulWidget> createState() {
     return _ForumBaseState();
   }
 }
-
 class _ForumBaseState extends State<ForumBase> {
-  var test = new Center (
-      child: Container(
-        margin: const EdgeInsets.all(10.0),
-        color: Colors.pink,
-        width: 48.0,
-        height: 48.0,
-      ),
-  );
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
+  //
+  // Note: This is a GlobalKey<FormState>,
+  // not a GlobalKey<MyCustomFormState>.
+  final _formKey = GlobalKey<FormState>();
+
   @override
-  Widget build(BuildContext build) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text('Forum'),
-        actions: <Widget>[
-          IconButton(
-            padding: EdgeInsets.all(5.0),
-            icon: Icon(Icons.search),
-            onPressed: () {
-//              showSearch(
-//              context: context,
-//              delegate: CustomSearchDelegate(),
-//              );
+  Widget build(BuildContext context) {
+    // Build a Form widget using the _formKey created above.
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
             },
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: RaisedButton(
+              onPressed: () {
+                // Validate returns true if the form is valid, or false
+                // otherwise.
+                if (_formKey.currentState.validate()) {
+                  // If the form is valid, display a Snackbar.
+                  Scaffold.of(context)
+                      .showSnackBar(SnackBar(content: Text('Processing Data')));
+                }
+              },
+              child: Text('Submit'),
+            ),
+          ),
         ],
-      ),
-      body: new Container (
-          child: test
       ),
     );
   }
