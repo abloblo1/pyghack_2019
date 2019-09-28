@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'forum.dart';
+import 'news.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(News(post: fetchPost()));
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
 //        primarySwatch: AppColorsTheme.myTheme.primarySwatch,
       ),
       routes: <String, WidgetBuilder>{
-        '/':      (BuildContext context) => new ForumBase(title: 'Forum'),
+        '/':      (BuildContext context) => new News(),
 //        '/forum': (BuildContext context) => new ForumDetailPage(),
       },
       initialRoute: '/',

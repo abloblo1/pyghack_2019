@@ -30,10 +30,10 @@ class _ForumBaseState extends State<ForumBase> {
             padding: EdgeInsets.all(5.0),
             icon: Icon(Icons.search),
             onPressed: () {
-              showSearch(
-              context: context,
-              delegate: CustomSearchDelegate(),
-              );
+//              showSearch(
+//              context: context,
+//              delegate: CustomSearchDelegate(),
+//              );
             },
           )
         ],
