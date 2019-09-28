@@ -47,6 +47,8 @@ flutter:
     - assets/loginBg.png
     - assets/splashScreen.png
     - assets/welcomeSign.png
+    - assets/bar_graph.png
+    - assets/line_graph.png
     - assets/signUpSign.png
     - assets/homeUserSign.png
     - assets/home.png
